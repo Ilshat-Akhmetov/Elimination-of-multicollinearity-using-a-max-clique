@@ -30,22 +30,31 @@ An example how to use this program you may find in jupyter-notebook **Presentati
 Here i provide a short description how to use this mini-library.
 
 To install it:
-* pip install multicollinearityElimination
+``` python
+>>> pip install multicollinearityElimination
+```
 
 Then we need to import it using this command
-* from multicollinearityElimination import CliqueFinder
+```python
+from multicollinearityElimination.CliqueFinder import CliqueFinder
+```
 
 CliqueFinder class has 3 init parameters:
-* ** corr_matrix ** - precalculated correlation matrix, format - pd.DataFrame 
-* ** features_data **  -  dataset used to calculate correlation matrix, format - pd.DataFrame
-* ** target_data **  -  an array containing target's values, format - pd.Series or np.array
+* **corr_matrix** - precalculated correlation matrix, format - pd.DataFrame 
+* **features_data**  -  dataset used to calculate correlation matrix, format - pd.DataFrame
+* **target_data**  -  an array containing target's values, format - pd.Series or np.array
 
-First you have to create an instance of *CliqueFinder*. Let its name be *cliqFinderObj*: 
-* *cliqFinderObj = CliqueFinder(corr_matrix, features_data, target_data) *  
+First you have to create an instance of *CliqueFinder*. 
+Let its name be *cliqFinderObj*: 
+```python
+cliqFinderObj = CliqueFinder(corr_matrix, features_data, target_data)
+```
 
 To get optimal subset of features you must fit object CliqueFinder
 with method fit: 
-* *cliqFinderObj.fit(feature_target_corr_func, threshold)*
+```python
+cliqFinderObj.fit(feature_target_corr_func, threshold)
+```
 
 Here:
 
@@ -59,8 +68,10 @@ is more than threshold then they are supposed to be correlated, else - not.
 
 After **fit** methods successfully ran you may get optimal subset of independent features or subset of features 
 which must be excluded from a dataset by methods **get_best_clique** and **get_out_of_clique_features** respectively.
-* cliqFinderObj.get_best_clique()
-* cliqFinderObj.get_out_of_clique_features()
+```python
+cliqFinderObj.get_best_clique()
+cliqFinderObj.get_out_of_clique_features()
+```
 
 
 
