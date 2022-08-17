@@ -27,10 +27,15 @@ That is what we get after removing all correlated features.
 
 An example how to use this program you may find in jupyter-notebook **Presentation.ipyng** file.
 
-Here is short description.
+Here i provide a short description how to use this mini-library.
 
-To import it write: *from CliqueFinder import CliqueFinder*. 
-Object CliqueFinder has 3 init parameters:
+To install it:
+* pip install multicollinearityElimination
+
+Then we need to import it using this command
+* from multicollinearityElimination import CliqueFinder
+
+CliqueFinder class has 3 init parameters:
 * ** corr_matrix ** - precalculated correlation matrix, format - pd.DataFrame 
 * ** features_data **  -  dataset used to calculate correlation matrix, format - pd.DataFrame
 * ** target_data **  -  an array containing target's values, format - pd.Series or np.array
